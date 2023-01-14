@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment Successfully</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'mainapp/css/bootstrap.min.css' %}">
+
+    <script type="text/javascript" src="{% static 'mainapp/js/bootstrap.min.js' %}">var vp=0; </script>
+<script><script>val=localStorage.getItem('shoppingCart');
+        var b=JSON.parse(val);
+        b.forEach(myfunction);
+        function myfunction(item,index){
+        document.getElementById("first").innerHTML=item.name}</script>
+
+    </script>
+</head>
+<body>
+<form>
+     <div class="alert alert-success">
+      <strong>SuccessFully Place Order.</strong>
+     </div>
+   <a href="/"> <button type="button" class="btn btn-success">GoToHome</button></a>
+    <div><br>
+        <table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col"><script></script></th>
+
+      <th scope="col">Dish Name</th>
+      <th scope="col">Qunatitay</th>
+      <th scope="col">price</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <th scope="row"><script>val=localStorage.getItem('shoppingCart');
+        var b=JSON.parse(val);
+        b.forEach(myfunction);
+        function myfunction(item,index){ document.write(index+"<br>");}</script></th>
+       <td id="first"><script>val=localStorage.getItem('shoppingCart');
+        var b=JSON.parse(val);
+        b.forEach(myfunction);
+        function myfunction(item,index){ document.write(item.name+"<br>");}</script></td>
+      <td><script>val=localStorage.getItem('shoppingCart');
+        var b=JSON.parse(val);
+        b.forEach(myfunction);
+        function myfunction(item,index){ document.write(item.count+"<br>");}</script></td>
+      <td><script>val=localStorage.getItem('shoppingCart');
+        var b=JSON.parse(val);
+        b.forEach(myfunction);
+        function myfunction(item,index){ document.write(item.price*item.count    +"<br>");}</script></td>
+    </tr>
+    <!--<tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr> </tr>-->
+    <tr>
+        <th scope="row"></th>
+      <td colspan="2">Total Price</td>
+      <td>
+         <script>val=localStorage.getItem('shoppingCart');
+        var b=JSON.parse(val);
+        var sum=0;
+        b.forEach(myfunction);
+        function myfunction(item,index){ sum+=item.price*item.count;
+       }document.write(sum);</script>
+      </td>
+
+  </tbody>
+</table>
+    </div>
+ </form>
+</body>
+</html>

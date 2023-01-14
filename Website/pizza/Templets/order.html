@@ -1,0 +1,48 @@
+{% load static %}
+	 <link rel="stylesheet" type="text/css" href="{% static 'mainapp/css/bootstrap.min.css' %}"
+	 >
+	 <script type="text/javascript" src="{% static 'mainapp/js/bootstrap.min.js' %}"> </script>
+   <script>
+      function terms_changed(termsCheckBox){
+    //If the checkbox has been checked
+    if(termsCheckBox.checked){
+        //Set the disabled property to FALSE and enable the button.
+        document.getElementById("submit_button").disabled = false;
+    } else{
+        //Otherwise, disable the submit button.
+        document.getElementById("submit_button").disabled = true;
+    }
+}
+    </script>
+<!------ Include the above in your HEAD tag ---------->
+<div class="container">
+<br>  <p class="text-center">pizza Ordering System </p>
+<hr>
+
+	<aside class="">
+    <p><script>{{name1}}</script></p>
+
+<article class="card">
+<div class="card-body p-5">
+<form action="/final_page" method="post">
+    {% csrf_token %}
+<div class="form-check form-switch">
+    <input class="form-check-input" type="checkbox" id="checkme" > cash on delivery
+ <!-- <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" id="checkme"  onclick="terms_changed(this)">
+  <label class="form-check-label" for="flexSwitchCheckDefault">Cash on Delivery</label>-->
+</div><br>
+	<!--<a class="subscribe btn btn-primary btn-block" href="/final_page" id="submit_button"> Confirm Order </a>--><br>
+    <button class="subscribe btn btn-primary btn-block"type="submit" id="sendNewSms" disabled>Confirm Order</button>
+    </form>
+    <script>
+  var checker = document.getElementById('checkme');
+var sendbtn = document.getElementById('sendNewSms');
+checker.onchange = function() {
+  sendbtn.disabled = !this.checked;
+};
+    </script>
+	<div class="form-group">
+    <label for="exampleFormControlTextarea1">Enter delivery Address</label>
+    <textarea class="form-control" disabled="true" id="exampleFormControlTextarea1" rows="3">navsari,navsari,navsari,gujrat,india</textarea>
+  </div>
+</div>
